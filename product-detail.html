@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>All products | Red Store | Ecommerce Website</title>
+    <title>Product Detail | Red Store | Ecommerce Website</title>
 </head>
 
 <body>
@@ -36,19 +36,63 @@
         </div>
     </div>
 
-    <!-- featured products -->
-    <div class="product">
+    <!-- Single product -->
+    <div class="single-product">
         <div class="small-container">
 
+            <div class="row">
+                <div class="col-2">
+
+                    <img src="images/gallery-1.jpg" width="100%" id="big-img">
+
+                    <div class="small-img-row">
+                        <div class="small-img-col">
+                            <img class="small-img" src="images/gallery-1.jpg" width="100%">
+                        </div>
+                        <div class="small-img-col">
+                            <img class="small-img" src="images/gallery-2.jpg" width="100%">
+                        </div>
+                        <div class="small-img-col">
+                            <img class="small-img" src="images/gallery-3.jpg" width="100%">
+                        </div>
+                        <div class="small-img-col">
+                            <img class="small-img" src="images/gallery-4.jpg" width="100%">
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-2">
+                    <p>Home / T-shirt</p>
+                    <h1>Red Printed T-Shirt by HRX</h1>
+                    <h4>$50.00</h4>
+                    <p>Select size
+                        <select name="" id="">
+                  
+                    <option value="">XXL</option>
+                    <option value="">XL</option>
+                    <option value="">L</option>
+
+                </select></p>
+                    <input type="number" value="1" min="1">
+                    <a href="" class="btn">Add To Cart</a>
+                    <h3>Product Details</h3>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis, sed accusantium repellendus odio ullam tempore assumenda rerum accusamus eos mollitia, dignissimos labore, similique dolor nulla dolores nemo iusto et quisquam?</p>
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="product">
+        <div class="small-container">
             <div class="row row-2">
-                <h2>All products</h2>
-                <select name="" id="">
-                    <option value="">Default sort</option>
-                    <option value="">Sort by price</option>
-                    <option value="">Sort by popularity</option>
-                    <option value="">Sort by rating</option>
-                    <option value="">Sort by sale</option>
-                </select>
+                <h2>Related products</h2>
+                <a href="">View more</a>
             </div>
             <div class="row">
                 <div class="col-4">
@@ -101,68 +145,11 @@
                     </div>
                     <p>$50.00</p>
                 </div>
-                <div class="col-4">
-                    <img src="images/product-5.jpg" alt="">
-                    <h4>Hex Shoes</h4>
-                    <div class="ratings">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </div>
-                    <p>$100.00</p>
-                </div>
-                <div class="col-4">
-                    <img src="images/product-6.jpg" alt="">
-                    <h4>Puma T-shirt</h4>
-                    <div class="ratings">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star-half-o"></i>
-                        <i class="fa fa-star-o"></i>
-                    </div>
-                    <p>$50.00</p>
-                </div>
-                <div class="col-4">
-                    <img src="images/product-7.jpg" alt="">
-                    <h4>Socks</h4>
-                    <div class="ratings">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </div>
-                    <p>$20.00</p>
-                </div>
-                <div class="col-4">
-                    <img src="images/product-8.jpg" alt="">
-                    <h4>Watch</h4>
-                    <div class="ratings">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </div>
-                    <p>$1000 .00</p>
-                </div>
-            </div>
-            <div class="page-btn">
-                <a href=""><span>1</span></a>
-                <a href=""><span>2</span></a>
-                <a href=""><span>3</span></a>
 
-                <a href=""><span>&#10140;</span></a>
             </div>
+
         </div>
-
     </div>
-
-
-
 
 
 
@@ -217,6 +204,16 @@
                 menu.style.maxHeight = "300px";
             } else {
                 menu.style.maxHeight = "0px";
+            }
+        }
+
+        const bigImg = document.querySelector("#big-img");
+        console.log(bigImg.src);
+        const smallImg = document.querySelectorAll(".small-img");
+
+        for (const a of smallImg) {
+            a.onclick = function() {
+                bigImg.src = a.src;
             }
         }
     </script>
